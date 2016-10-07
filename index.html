@@ -1,0 +1,104 @@
+<html>
+    <head style="margin: 0px;">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <title>Grant Thompson</title>
+    </head>
+    <body style="margin: 0px; background-color: rgb(211, 211, 211);" ng-app="gtApp" ng-controller="gtCont">
+        <div class="h2 navbar navbar-default navbar-fixed-top" style="top: -20px; background-color: rgb(231, 231, 231); opacity: 0.95;">
+            <div class="text-center navbar-text" style="cursor: pointer">Grant Thompson | Programming; Weirdness</div>
+            <div class="btn-group btn-group-justified small">
+                <div class="btn" ng-click="view = 0;"><b>Thoughts</b></div>
+                <div class="btn" ng-click="view = 1;"><b>Coding</b></div>
+                <div class="btn hidden-xs" ng-click="view = 2;"><b>Projects</b></div>
+                <div class="btn hidden-xs" ng-click="view = 3;"><b>Assignments</b></div>
+                <div class="btn" ng-click="view = 4;"><b>About</b></div>
+            </div>
+        </div>
+        
+        <br><br><br><br><br><br>
+        
+        <div ng-if="view === 0">
+            <div ng-repeat="post in thts">
+                <div class="well" style="max-width: 800px; margin: auto;">
+                    <div class="lead">{{thoughts[post]}}</div>{{thghts[post]}}<br><br><div class="small text-right">{{dates[post]}}</div>
+                </div>
+                <br>
+            </div>
+        </div>
+        
+        <div ng-if="view === 1">
+            <div ng-repeat="post in amnt">
+                <div class="well" style="max-width: 800px; margin: auto;">
+                    <div class="lead">{{titles[post]}}</div>{{posts[post]}}<br><br><div class="small text-right">{{cDates[post]}}</div>
+                </div>
+                <br>
+            </div>
+        </div>
+        
+        <div ng-if="view === 2">
+            <div ng-repeat="post in amnt">
+                <div class="well" style="max-width: 800px; margin: auto;">
+                    <div class="lead">{{titles[post]}}</div>{{posts[post]}}<br><br><div class="small text-right">{{cDates[post]}}</div>
+                </div>
+                <br>
+            </div>
+        </div>
+        
+        <div ng-if="view === 3">
+            <div ng-repeat="post in amnt">
+                <div class="well" style="max-width: 800px; margin: auto;">
+                    <div class="lead">{{titles[post]}}</div>{{posts[post]}}<br><br><div class="small text-right">{{cDates[post]}}</div>
+                </div>
+                <br>
+            </div>
+        </div>
+        
+        <div ng-if="view === 4">
+            <div ng-repeat="post in abt">
+                <div class="well" style="max-width: 800px; margin: auto;">
+                    <div class="lead">{{about[post]}}</div>{{abit[post]}}
+                </div>
+                <br>
+            </div>
+        </div>
+        
+        <script>
+            var app = angular.module('gtApp',[]);
+            
+            app.controller('gtCont', function($scope) {
+                $scope.view = 1;
+                
+                //thoughts section
+                
+                $scope.thts = [0];
+                $scope.thoughts = ["What is this?"];
+                $scope.thghts = ["This is the thoughts section assosiated with my CS105 class. Here, I'm going to post a weekly interpretation of an article, and I will provide the link, so you can think otherwise, like you should."];
+                $scope.dates = ["10/6/16"];
+                
+                //coding section
+                
+                $scope.amnt = [0,1,2];
+                $scope.titles = ["Hana","Some Thoughts on Programming","Learning Programming"];
+                $scope.posts = ["Hana is a programming language designed to fix some of my personal issues with C, which are quite small, mind you. Essentially, I needed (and still need) to output as much usable code as possible for a very large C project I am working on. While using it everyday, I noticed some small things that could offer some great benefits if implemented by default, such as auto-semicoloning, quicker declaration of types, and other syntactical features. Hana spawned from such ideas, forming a weird little child o' mine which will likely develop over the years as I go on incorrectly judging work of superior programmers.","Programming has a weird spot for me, so this is a quick paragraph detailing some of my opinions on it. Many view it as a tool, a mimicry of our minds, a mimicry of our logic, a gateway to ease, etc. I personally view it as so much more universal than any of those things- it encompasses a very, very large set of outputs, possibly greater than anything else in the world which distinguishes input from output. Because of this, I say 'if it is mathematically describable, it can be a program', and that means anything that fits that description. As in, all the noisy situations to the most marvelously powerful AI bots doing our busywork and even overcoming us in many ways. Programming offers endless amounts of possibilities, more so than any other canvas available, and that is why I call it an art. Mathematically, all other arts could be considered a subset of programming, as programming is used to define many other mediums (video, photo, writing, graphics, etc.); philosophically, however, I attempt to treat it as an art due to its ability to cripple me emotionally and yet allow me the most success I have found in life to date.","Get a C compiler or a JVM. Use it everyday. Done."];
+                $scope.cDates = ["10/6/2016","10/6/2016","10/6/2016"];
+                
+                //projects section
+                
+                
+                
+                //assignments section
+                
+                
+                
+                //about section
+                
+                $scope.abt = [0];
+                $scope.about = ["About the Editor"];
+                $scope.abit = ["A nerdy coder who thinks of programming in a significantly manner than he should, Grant Thompson is quite the weirdo. He operates strangely, generally sticking to C and his own language 'hana' (which is very similar to C anyway) to do his work. He has been programming since 9th grade and been doing it seriously since 11th, but would like to say that he got into the world of computers very seriously around 7th grade. Moreover, he is a big fan of the philosophy of free/open source yet maintains that the FSF is slightly strange in its views and should more deeply consider its propositions. That said, he also only uses gcc and usually uses emacs. As a side note, he thinks of programming as a form of art due to its ability to produce more possible outputs than any standard media, so be wary, he may make you wonder a bit."];
+            });
+        </script>
+    </body>
+</html>
