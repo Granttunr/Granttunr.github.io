@@ -39,18 +39,18 @@
         </div>
         
         <div ng-if="view === 2">
-            <div ng-repeat="post in amnt">
+            <div ng-repeat="post in prj">
                 <div class="well" style="max-width: 800px; margin: auto;">
-                    <div class="lead">{{titles[post]}}</div>{{posts[post]}}<br><br><div class="small text-right">{{cDates[post]}}</div>
+                    <div class="lead">{{projects[post]}}</div>{{projs[post]}}
                 </div>
                 <br>
             </div>
         </div>
         
         <div ng-if="view === 3">
-            <div ng-repeat="post in amnt">
+            <div ng-repeat="post in asg">
                 <div class="well" style="max-width: 800px; margin: auto;">
-                    <div class="lead">{{titles[post]}}</div>{{posts[post]}}<br><br><div class="small text-right">{{cDates[post]}}</div>
+                    <div class="lead">{{assignments[post]}}</div>{{assgns[post]}}
                 </div>
                 <br>
             </div>
@@ -87,11 +87,15 @@
                 
                 //projects section
                 
-                
+                $scope.prj = [];
+                $scope.projects = [];
+                $scope.projs [];
                 
                 //assignments section
                 
-                
+                $scope.asg = [];
+                $scope.assignments = [];
+                $scope.assgns = [];
                 
                 //about section
                 
