@@ -30,7 +30,7 @@
         <div ng-if="view === 1">
             <div ng-repeat="post in amnt">
                 <div class="well" style="max-width: 800px; margin: auto;">
-                    <div class="lead">{{titles[post]}}<small style="opacity: 0.8;"> | {{instit[post]}}</small></div><br>{{posts[post]}}<br><br><div class="small text-right">{{cDates[post]}}</div><br><br><div class="small text-right"><a ng-href="{{cont[post]}}">{{cont[post]}}</a></div>
+                    <div class="lead">{{titles[post]}}<small style="opacity: 0.8;"> | {{instit[post]}}</small></div><br>{{posts[post]}}<div class="small text-right"><a ng-href="{{cont[post]}}">{{cont[post]}}</a></div>
                 </div>
                 <br>
             </div>
